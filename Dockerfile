@@ -1,6 +1,7 @@
 FROM python:3.10-slim
-WORKDIR /app
-COPY . /app
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /bot
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
 EXPOSE 8443
 CMD ["python", "main.py"]
