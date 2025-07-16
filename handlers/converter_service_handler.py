@@ -67,5 +67,5 @@ async def bases_output_handler(message: Message) -> None:
     result = client.convert_bases(from_base=data[0], to_base=data[1], number=data[2])
     await message.answer(
         f"🔄 <b>Результат конвертации:</b>\n"
-        f"<b>{data[2]}</b><sub>{data[0]}</sub> → <b>{result}</b><sub>{data[1]}</sub>",
+        f"<code>{result}</code>",
     )
