@@ -49,7 +49,7 @@ async def password_check_handler(message: Message) -> None:
         problems_formatted = "\n".join(f"• {problem}" for problem in problems)
         response = (
             f"🔐 <b>Проверка пароля</b>\n\n"
-            f"<b>Общая оценка:</b> {result['score']}/10\n"
+            f"<b>Общая оценка:</b> {result['score']}/5\n"
             f"<b>Обнаруженные проблемы:</b>\n{problems_formatted}"
         )
     else:
