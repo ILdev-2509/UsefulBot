@@ -41,9 +41,8 @@ async def bases_type_handler(message: Message, state: FSMContext) -> None:
 
 @router.message(PasswordGeneratorStates.waiting_for_input)
 async def password_check_handler(message: Message) -> None:
-    result = client.get(
-        endpoint='password_manager/checker/check',
-        params={'password': message.text}
+    result = client.check_password(
+        password=message.text
     )
     problems = result.get('problems', [])
     if problems:
